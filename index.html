@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SIAVAC - Fòm Plent Viktim</title>
+<title>SIAVAC - Plent Viktim A Distans</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
@@ -18,7 +18,7 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#ececec;
+background:#eef0f2;
 padding:10px;
 }
 
@@ -26,41 +26,49 @@ padding:10px;
 max-width:900px;
 margin:auto;
 background:#fff;
-padding:20px;
+padding:18px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.2);
+box-shadow:0 0 10px rgba(0,0,0,.15);
 }
 
+/* HEADER */
 .header{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .header img{
-width:100px;
-height:100px;
+width:90px;
+height:90px;
 object-fit:contain;
 }
 
 .header h1{
-font-size:26px;
 color:#003366;
-margin-top:10px;
+font-size:24px;
 }
 
 .header h2{
-font-size:16px;
-margin-top:5px;
+font-size:14px;
 color:#444;
 }
 
+/* INFO BOX */
+.info-box{
+background:#f1f6ff;
+padding:10px;
+border-left:4px solid #003366;
+margin-bottom:15px;
+font-size:13px;
+}
+
+/* SECTION */
 .section-title{
 background:#003366;
 color:#fff;
 padding:8px;
-margin-top:20px;
-margin-bottom:10px;
-font-size:16px;
+font-size:15px;
+margin-top:15px;
 border-radius:5px;
 }
 
@@ -68,7 +76,6 @@ border-radius:5px;
 display:flex;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:10px;
 }
 
 .col{
@@ -78,46 +85,31 @@ min-width:100%;
 
 label{
 font-weight:bold;
+font-size:13px;
+margin-top:10px;
 display:block;
-margin-bottom:5px;
-font-size:14px;
 }
 
 input,textarea{
 width:100%;
 padding:10px;
-border:1px solid #999;
+border:1px solid #aaa;
 border-radius:6px;
 font-size:14px;
 }
 
 textarea{
+min-height:80px;
 resize:vertical;
-height:80px;
 }
 
-.question{
-margin-bottom:15px;
+.small{
+font-size:12px;
+color:#555;
+margin-top:5px;
 }
 
-.signature{
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between;
-margin-top:50px;
-gap:20px;
-}
-
-.signature div{
-width:100%;
-text-align:center;
-}
-
-.line{
-border-top:1px solid #000;
-margin-top:50px;
-}
-
+/* BUTTON */
 button{
 width:100%;
 margin-top:20px;
@@ -134,23 +126,33 @@ button:hover{
 background:#0050a5;
 }
 
-@media (min-width:768px){
+/* SIGNATURE */
+.signature{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.signature div{
+width:100%;
+text-align:center;
+}
+
+.line{
+border-top:1px solid #000;
+margin-top:45px;
+}
+
+/* DESKTOP */
+@media(min-width:768px){
 .col{min-width:48%}
 .signature div{width:40%}
-button{width:auto;padding:12px 25px}
-.header img{width:120px;height:120px}
-.header h1{font-size:28px}
-.header h2{font-size:18px}
 }
 
 @media print{
 button{display:none}
-.question,.row,.section-title{
-break-inside:avoid;
-page-break-inside:avoid;
 }
-}
-
 </style>
 
 </head>
@@ -163,125 +165,79 @@ page-break-inside:avoid;
 <img src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
 <h1>SIAVAC</h1>
 <h2>Service Intelligence AntiVol AntiCrime</h2>
-<h2>FÒM PLAINT VIKTIM</h2>
+<h2>PLENT VIKTIM - A DISTANS</h2>
 </div>
 
-<div class="section-title">ENFÒMASYON DOSYE</div>
-
-<div class="row">
-<div class="col">
-<label>Nimewo Dosye</label>
-<input type="text">
+<div class="info-box">
+<strong>Enstriksyon:</strong> Ranpli fòm sa ak verite. Tout enfòmasyon yo pral itilize pou ankèt SIAVAC.
+Apre w fini, klike sou “Telechaje PDF” epi voye dokiman an tounen.
 </div>
 
-<div class="col">
-<label>Dat</label>
-<input type="date">
-</div>
-</div>
+<div class="section-title">DOSYE AK IDANTIFIKASYON</div>
 
-<div class="row">
-<div class="col">
-<label>Kote Ensidan</label>
-<input type="text">
-</div>
+<label>Case ID (Nimewo Dosye)</label>
+<input type="text" placeholder="SIAVAC-2026-XXXX">
 
-<div class="col">
-<label>Kalite Krim / Ensidan</label>
-<input type="text">
-</div>
-</div>
+<label>Dat / Lè Ranpli Fòm nan</label>
+<input type="datetime-local">
 
 <div class="section-title">ENFÒMASYON VIKTIM</div>
 
-<div class="row">
-<div class="col">
-<label>Non Konplè Viktim</label>
+<label>Non Konplè</label>
 <input type="text">
-</div>
 
-<div class="col">
 <label>Telefòn</label>
 <input type="text">
-</div>
-</div>
 
-<div class="row">
-<div class="col">
-<label>Adrès Viktim</label>
+<label>Adrès</label>
 <input type="text">
-</div>
 
-<div class="col">
 <label>Okipasyon</label>
 <input type="text">
-</div>
-</div>
 
-<div class="section-title">DESKRIPSYON PLENT LA</div>
+<div class="section-title">DESKRIPSYON ENSIDAN</div>
 
-<div class="question">
-<label>1. Ki sa ki rive ou egzakteman?</label>
+<label>1. Ki sa ki rive ou?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>2. Kilè ensidan an te rive?</label>
+<label>2. Kilè sa te rive?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
 <label>3. Ki kote li te rive?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>4. Kijan ensidan an te kòmanse?</label>
+<label>4. Kijan li te kòmanse?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>5. Ki moun ou sispèk oswa ki enplike?</label>
+<label>5. Ki moun ou panse ki enplike?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>6. Ki domaj ou sibi (kòb, bagay,fizik, emosyonèl)?</label>
+<label>6. Ki domaj ou sibi?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
 <label>7. Èske gen temwen?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>8. Èske ou gen prèv (foto, videyo, mesaj)?</label>
+<label>8. Èske gen prèv (foto/videyo/messaj)?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
 <label>9. Èske ou deja fè plent lòt kote?</label>
 <textarea></textarea>
-</div>
 
-<div class="question">
-<label>10. Lòt enfòmasyon enpòtan</label>
-<textarea style="height:140px;"></textarea>
-</div>
+<label>10. Lòt enfòmasyon</label>
+<textarea style="min-height:130px"></textarea>
 
-<div class="section-title">DEKLARASYON OFISYÈL</div>
+<div class="section-title">KONSANTMAN LEGAL</div>
 
-<p style="font-size:14px;line-height:24px;text-align:justify;">
-Mwen deklare tout enfòmasyon mwen bay yo se verite selon sa mwen konnen.
-Mwen fè deklarasyon sa san fòs, san presyon.
+<p class="small">
+Mwen konfime tout sa mwen ekri yo se verite. Mwen dakò SIAVAC itilize enfòmasyon sa yo pou ankèt ofisyèl.
 </p>
 
 <div class="signature">
 
 <div>
 <div class="line"></div>
-Viktim
+Siyati Viktim
 </div>
 
 <div>
@@ -291,7 +247,7 @@ Ajan SIAVAC
 
 </div>
 
-<button onclick="downloadPDF()">📄 Telechaje PDF Plent</button>
+<button onclick="downloadPDF()">📄 Telechaje & Voye PDF</button>
 
 </div>
 
@@ -302,7 +258,7 @@ const element = document.getElementById("pdf");
 
 html2pdf().set({
 margin:0.4,
-filename:'SIAVAC_Plent_Viktim.pdf',
+filename:'SIAVAC_Plent_Viktim_Remote.pdf',
 image:{type:'jpeg',quality:1},
 html2canvas:{
 scale:2,
